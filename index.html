@@ -22,6 +22,7 @@
 <script>
 let yourScore = 0;
 let computerScore = 0;
+let message;
 
 function computerPlay() {
     let random = Math.floor(Math.random() * 4);
@@ -91,30 +92,37 @@ const scissors = document.querySelector('#scissors');
 
 const results = document.querySelector('#results');
 
+const output = document.createElement('p');
 
 
 rock.addEventListener('click', function(e) {
     if(yourScore < 4 && computerScore < 4) {
         result = playRound("rock", computerPlay());
-        console.log(result + " You: " + yourScore + " Computer: " + computerScore);
-        return result + " You: " + yourScore + " Computer: " + computerScore;
+        message = result + " You: " + yourScore + " Computer: " + computerScore;
+        output.textContent = message;
+        results.appendChild(output);
+        return message;
     } else if (yourScore == 4 || computerScore == 4) {
         result = playRound("rock", computerPlay());
         if (yourScore == 5) {
-            final = "You win! " + " You: " + yourScore + " Computer: " + computerScore;
+            message = "You win! " + " You: " + yourScore + " Computer: " + computerScore;
             yourScore = 0;
             computerScore = 0;
-            console.log(final);
-            return final;
+            output.textContent = message;
+            results.appendChild(output);
+            return message;
         } else if (computerScore == 5) {
-            final = "You lose! " + " You: " + yourScore + " Computer: " + computerScore;
+            message = "You lose! " + " You: " + yourScore + " Computer: " + computerScore;
             yourScore = 0;
             computerScore = 0;
-            console.log(final);
-            return final;
+            output.textContent = message;
+            results.appendChild(output);
+            return message;
         } else {
-            console.log(result + " You: " + yourScore + " Computer: " + computerScore);
-            return result + " You: " + yourScore + " Computer: " + computerScore;
+            message = result + " You: " + yourScore + " Computer: " + computerScore;
+            output.textContent = message;
+            results.appendChild(output);
+            return message;
         }
     }
 });
