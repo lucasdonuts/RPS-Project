@@ -119,23 +119,31 @@ rock.addEventListener('click', function(e) {
 paper.addEventListener('click', function(e) {
     if(yourScore < 4 && computerScore < 4) {
         result = playRound("paper", computerPlay());
-        console.log(result + " You: " + yourScore + " Computer: " + computerScore);
-        return result + " You: " + yourScore + " Computer: " + computerScore;
+        message = result + " You: " + yourScore + " Computer: " + computerScore;
+        output.textContent = message;
+        results.appendChild(output);
+        return message;
     } else if (yourScore == 4 || computerScore == 4) {
         result = playRound("paper", computerPlay());
         if (yourScore == 5) {
-            final = "You win! " + " You: " + yourScore + " Computer: " + computerScore;
+            message = "You win! " + " You: " + yourScore + " Computer: " + computerScore;
             yourScore = 0;
             computerScore = 0;
-            console.log(final);
+            output.textContent = message;
+            results.appendChild(output);
+            return message;
         } else if (computerScore == 5) {
-            final = "You lose! " + " You: " + yourScore + " Computer: " + computerScore;
+            message = "You lose! " + " You: " + yourScore + " Computer: " + computerScore;
             yourScore = 0;
             computerScore = 0;
-            console.log(final);
+            output.textContent = message;
+            results.appendChild(output);
+            return message;
         } else {
-            console.log(result + " You: " + yourScore + " Computer: " + computerScore);
-            return result + " You: " + yourScore + " Computer: " + computerScore;
+            message = result + " You: " + yourScore + " Computer: " + computerScore;
+            output.textContent = message;
+            results.appendChild(output);
+            return message;
         }
     }
 });
@@ -143,23 +151,31 @@ paper.addEventListener('click', function(e) {
 scissors.addEventListener('click', function(e) {
     if(yourScore < 4 && computerScore < 4) {
         result = playRound("scissors", computerPlay());
-        console.log(result + " You: " + yourScore + " Computer: " + computerScore);
-        return result + " You: " + yourScore + " Computer: " + computerScore;
+        message = result + " You: " + yourScore + " Computer: " + computerScore;
+        output.textContent = message;
+        results.appendChild(output);
+        return message;
     } else if (yourScore == 4 || computerScore == 4) {
         result = playRound("scissors", computerPlay());
         if (yourScore == 5) {
-            final = "You win! " + " You: " + yourScore + " Computer: " + computerScore;
+            message = "You win! " + " You: " + yourScore + " Computer: " + computerScore;
             yourScore = 0;
             computerScore = 0;
-            console.log(final);
+            output.textContent = message;
+            results.appendChild(output);
+            return message;
         } else if (computerScore == 5) {
-            final = "You lose! " + " You: " + yourScore + " Computer: " + computerScore;
+            message = "You lose! " + " You: " + yourScore + " Computer: " + computerScore;
             yourScore = 0;
             computerScore = 0;
-            console.log(final);
+            output.textContent = message;
+            results.appendChild(output);
+            return message;
         } else {
-            console.log(result + " You: " + yourScore + " Computer: " + computerScore);
-            return result + " You: " + yourScore + " Computer: " + computerScore;
+            message = result + " You: " + yourScore + " Computer: " + computerScore;
+            output.textContent = message;
+            results.appendChild(output);
+            return message;
         }
     }
 });
